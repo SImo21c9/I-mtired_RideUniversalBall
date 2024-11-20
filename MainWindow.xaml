@@ -1,0 +1,49 @@
+﻿<Window x:Class="mywpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mywpfApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+      <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Labels and Buttons -->
+        <Label Content="Footballs:" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="72"/>
+        <Button Content="Make Balls" HorizontalAlignment="Left" Height="27" Margin="0,32,0,0" VerticalAlignment="Top" Width="72" Click="Make_Balls"/>
+        <Label Content="Business" HorizontalAlignment="Left" Height="27" Margin="0,83,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.472,0.076" />
+        <Label Content="--------------------------------------------------------------" HorizontalAlignment="Left" Height="27" Margin="0,115,0,0" VerticalAlignment="Top" Width="350"/>
+        
+        <!-- Funds -->
+        <Label Content="Available funds:" HorizontalAlignment="Left" Height="27" Margin="5,142,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="100,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" IsReadOnly="True" Text="{Binding Funds}"/>
+
+        <!-- Unsold Inventory -->
+        <Label Content="Unsold Inventory:" HorizontalAlignment="Left" Height="27" Margin="5,174,0,0" VerticalAlignment="Top" Width="110"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="120,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" IsReadOnly="True" Text="{Binding Clips}" />
+
+        <!-- Pricing Controls -->
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="72,5,0,0" TextWrapping="Wrap" Text="{Binding Clips}" VerticalAlignment="Top" Width="70" IsReadOnly="True"/>
+        <Button Content="Lower" HorizontalAlignment="Left" Margin="10,207,0,0" VerticalAlignment="Top" Click="Lower_Balls" Height="20" Width="36"/>
+        <Button Content="Higher" HorizontalAlignment="Left" Margin="60,207,0,0" VerticalAlignment="Top" Click="Higher_balls" Height="20" Width="40"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="115, 207, 0, 0" VerticalAlignment="Top" Text="{Binding Priser}" Width="70" IsReadOnly="True"/>
+        
+        <!-- Public Demand -->
+        <Label Content="Public Demand:" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Margin="5,241,0,0" Width="90"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="107,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" IsReadOnly="True" Text="{Binding Public_Demand}"/>
+
+        <!-- Auto Balls -->
+        <Button Content="AutoBalls" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,355,0,0" Click="AutoBalls_Balls" Height="20" Width="54"/>
+        <Label Content="Cost:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,380,0,0"/>
+        <TextBox Text="{Binding AutoBalls}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="51" Margin="64,383,0,0" IsReadOnly="True"/>
+        
+        <!-- Manufacturing -->
+        <Button Content="Buy Rubber" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10, 280, 0 , 0" Click="Buy_Rubber"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="90, 280, 0, 0" VerticalAlignment="Top" Width="51" IsReadOnly="True"/>
+        <Label Content="Cost:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,310, 0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="60, 310, 0, 0" VerticalAlignment="Top" Width="40" IsReadOnly="True" Text="{Binding Price}"/>
+    </Grid>
+</Window>
